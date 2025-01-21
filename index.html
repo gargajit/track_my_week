@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Track My Week</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Weekly Time Tracking</h1>
+      <form id="weekly-form">
+        <div class="day-div">
+          <label for="monday">Monday:</label>
+          <input type="text" id="monday" name="monday" />
+        </div>
+        <div class="day-div">
+          <label for="tuesday">Tuesday:</label>
+          <input type="text" id="tuesday" name="tuesday" />
+        </div>
+        <div class="day-div">
+          <label for="wednesday">Wednesday:</label>
+          <input type="text" id="wednesday" name="wednesday" />
+        </div>
+        <div class="day-div">
+          <label for="thursday">Thurday:</label>
+          <input type="text" id="thursday" name="thursday" />
+        </div>
+        <div class="day-div">
+          <label for="friday">Friday:</label>
+          <input type="text" id="friday" name="friday" />
+        </div>
+        <div class="day-div">
+          <label for="saturday">Saturday:</label>
+          <input type="text" id="saturday" name="saturday" />
+        </div>
+
+        <div class="day-div">
+          <label for="sunday">Sunday:</label>
+          <input type="text" id="sunday" name="sunday" />
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div class="display-result"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
