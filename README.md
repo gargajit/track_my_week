@@ -1,5 +1,5 @@
 # Track My Week
-A webapp to track your daily hours whether you are a freelancer or a student or pursuing a hobby and want to track your weekly report.
+A webapp to track your daily hours whether you are a employer, a freelancer, a student or pursuing a hobby and want to get your weekly report.
 A user needs to enter their daily hours and a report will be generated with the following details:
 - Total hours worked
 - Average daily hours
@@ -8,9 +8,9 @@ A user needs to enter their daily hours and a report will be generated with the 
 - Whether the week was full-time (worked 35 hours or more)
 
 ## Tech Used
+- JS and JQuery
 - HTML
 - CSS
-- JS and JQuery
 
 ## Version1
 `v1`: Everything is logged in the console.
@@ -25,4 +25,7 @@ A user needs to enter their daily hours and a report will be generated with the 
 
 ## Version2
 `v2`: Displayed inside a div on the webapp.
+
+### UI
+![image](https://github.com/user-attachments/assets/f7bc2cbb-470e-4a30-ac5d-e6bfedfc35bf)
 
