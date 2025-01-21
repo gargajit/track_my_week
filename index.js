@@ -101,43 +101,33 @@ $("#weekly-form").on("submit", function (event) {
 
   $(".display-result").css("display", "inline");
 
-  // loop to push all the data user entered in the array: dailyHoursArray
-  for (let i = 0; i < 7; i++) {
-    let temp = "";
-    switch (i) {
-      case 0:
-        temp = $("#monday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 1:
-        temp = $("#tuesday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 2:
-        temp = $("#wednesday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 3:
-        temp = $("#thursday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 4:
-        temp = $("#friday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 5:
-        temp = $("#saturday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      case 6:
-        temp = $("#sunday").val();
-        dailyHoursArray.push(Number(temp));
-        break;
-      default:
-        console.log("Wrong case.");
-        break;
+  // Reset array before each form submission
+  dailyHoursArray = [];
+
+  // Array of day names corresponding to input IDs
+  const days = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+  ];
+
+  // Loop through each day, validate input, and push to dailyHoursArray
+  for (let i = 0; i < days.length; i++) {
+    let temp = $(`#${days[i]}`).val();
+
+    if (temp > 24) {
+      throw new Error(
+        `Input for ${days[i]} cannot be more than 24 hours. (${temp})`
+      );
     }
+
+    dailyHoursArray.push(Number(temp));
   }
+
   console.log(dailyHoursArray);
 
   // calling the function: weeklyWork() and storing the multiple returns
