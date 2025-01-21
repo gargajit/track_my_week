@@ -99,6 +99,8 @@ const weeklyWork = function (data) {
 $("#weekly-form").on("submit", function (event) {
   event.preventDefault(); // Prevents the form from submitting normally
 
+  $(".display-result").css("display", "inline");
+
   // loop to push all the data user entered in the array: dailyHoursArray
   for (let i = 0; i < 7; i++) {
     let temp = "";
@@ -142,28 +144,32 @@ $("#weekly-form").on("submit", function (event) {
   const [totalHours, averageHours, maxDay, daysWorked, isFullTime] =
     weeklyWork(dailyHoursArray);
 
-  let totalHoursContent = `Total Hours Worked: ${totalHours} hours`;
+  let totalHoursContent = `Total Hours Worked: <span class = "bold-values">${totalHours} hours</span>`;
 
-  let avgHoursContent = `Average Hours Worked: ${averageHours} hours`;
+  let avgHoursContent = `Average Hours Worked: <span class = "bold-values">${averageHours} hours</span>`;
 
-  let maxDayContent = `Maximum Worked On: ${maxDay}`;
+  let maxDayContent = `Maximum Worked On: <span class = "bold-values">${maxDay}</span>`;
 
   let daysWorkedContent = "";
   if (daysWorked !== 1) {
-    daysWorkedContent = `No. of days worked in this week: ${daysWorked} days`;
+    daysWorkedContent = `No. of days worked in this week: <span class = "bold-values">${daysWorked} days</span>`;
   } else {
-    daysWorkedContent = `No. of days worked in this week: %c${daysWorked} day`;
+    daysWorkedContent = `No. of days worked in this week: <span class = "bold-values">%c${daysWorked} day</span>`;
   }
 
-  let isFullTimeContent = `Full-time? (35 hours or more): ${isFullTime}`;
+  let isFullTimeContent = `Full-time? (35 hours or more): <span class = "bold-values">${isFullTime}</span>`;
 
   let summary = "";
   console.log(isFullTime);
 
-  if (isFullTime === "Yes") {
+  if (totalHours >= 35) {
     summary = "Wow! A very productive week!";
-  } else {
+  } else if (totalHours >= 25 && totalHours < 35) {
     summary = `A steady week!`;
+  } else if (totalHours > 10) {
+    summary = `Let's put more effort into next week.`;
+  } else {
+    summary = `You need to put more hours to suceed.`;
   }
 
   const htmlContent = `
@@ -175,7 +181,7 @@ $("#weekly-form").on("submit", function (event) {
     ${daysWorkedContent} <br />
     ${isFullTimeContent} <br />
     </p>
-    <div>Summary: ${summary}</div>
+    <div id="summary-div">Summary: ${summary}</div>
     `;
 
   $(".display-result").html(htmlContent);
