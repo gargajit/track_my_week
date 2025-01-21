@@ -142,6 +142,42 @@ $("#weekly-form").on("submit", function (event) {
   const [totalHours, averageHours, maxDay, daysWorked, isFullTime] =
     weeklyWork(dailyHoursArray);
 
+  let totalHoursContent = `Total Hours Worked: ${totalHours} hours`;
+
+  let avgHoursContent = `Average Hours Worked: ${averageHours} hours`;
+
+  let maxDayContent = `Maximum Worked On: ${maxDay}`;
+
+  let daysWorkedContent = "";
+  if (daysWorked !== 1) {
+    daysWorkedContent = `No. of days worked in this week: %c${daysWorked} days`;
+  } else {
+    daysWorkedContent = `No. of days worked in this week: %c${daysWorked} day`;
+  }
+
+  let isFullTimeContent = `Full-time? (35 hours or more): ${isFullTime}`;
+
+  let summary = "";
+  if (isFullTime) {
+    summary = "Wow! A very productive week!";
+  } else {
+    summary = `A steady week!`;
+  }
+
+  const htmlContent = `
+    <h2>Week's Report</h2>
+    <p>
+    ${totalHoursContent} <br />
+    ${avgHoursContent} <br />
+    ${maxDayContent} <br />
+    ${daysWorkedContent} <br />
+    ${isFullTimeContent} <br />
+    </p>
+    <div>Summary: ${summary}</div>
+    `;
+
+  $(".display-result").html(htmlContent);
+
   console.log(
     `%c********* Week's Report: *********`,
     "font-weight: bold; color: #ce3159;"
