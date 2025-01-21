@@ -150,7 +150,7 @@ $("#weekly-form").on("submit", function (event) {
 
   let daysWorkedContent = "";
   if (daysWorked !== 1) {
-    daysWorkedContent = `No. of days worked in this week: %c${daysWorked} days`;
+    daysWorkedContent = `No. of days worked in this week: ${daysWorked} days`;
   } else {
     daysWorkedContent = `No. of days worked in this week: %c${daysWorked} day`;
   }
@@ -158,7 +158,9 @@ $("#weekly-form").on("submit", function (event) {
   let isFullTimeContent = `Full-time? (35 hours or more): ${isFullTime}`;
 
   let summary = "";
-  if (isFullTime) {
+  console.log(isFullTime);
+
+  if (isFullTime === "Yes") {
     summary = "Wow! A very productive week!";
   } else {
     summary = `A steady week!`;
