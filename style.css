@@ -1,0 +1,51 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100vh;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  max-width: 570px;
+  margin: 0 auto;
+  padding: 60px;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.red-text {
+  color: red;
+}
+
+#weekly-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* width: 100%; */
+  /* box-sizing: border-box; */
+}
+
+#weekly-form > div {
+  display: flex;
+  gap: 10px;
+}
+
+#weekly-form label {
+  width: 85px;
+}
+
+#weekly-form input {
+  width: 60px;
+}
+
+#weekly-form button {
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
