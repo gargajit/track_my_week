@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 }
 
 .red-text {
-  color: red;
+  color: cadetblue;
 }
 
 #weekly-form {
@@ -45,7 +45,35 @@ body {
 }
 
 #weekly-form button {
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   outline: none;
   cursor: pointer;
   margin-top: 10px;
+}
+
+.display-result {
+  display: none;
+  background-color: #efefef;
+  border: 5px solid #efefef;
+  border-style: outset;
+  margin-top: 25px;
+  padding: 15px;
+}
+
+.display-result > h2 {
+  display: inline-block;
+  color: cadetblue;
+  border: 2px cadetblue;
+  border-style: none none solid none;
+}
+
+.bold-values {
+  font-weight: bold;
+}
+
+#summary-div {
+  font-weight: 800;
+  color: cadetblue;
+  margin-bottom: 8px;
 }
